@@ -21,14 +21,14 @@ const seattle = {
         
         let x = 0;
         for (let i = 0; i < this.workingHour.length; i++) {
-            console.log('------' + i);
+           
             x = getRandomIntInclusive(this.min, this.max);
             this.calculted.push(x);
             this.calculated2.push(Math.floor(x * this.avg));
 
         }
-        console.log(this.calculted);
-        console.log(this.calculated2);
+        // console.log(this.calculted);
+        // console.log(this.calculated2);
     },
 
     doList: function () {
@@ -48,8 +48,20 @@ const seattle = {
     
         }
 
+        let total=0
+        for(let i=0;i<this.calculated2.length;i++){
+            total=total+this.calculated2[i];
+        }
+
+        let node = document.createElement("LI");                
+        node.textContent = 'Total : '+ total+' cookies' ;                          
+        ulNode.appendChild(node);
+
+
+
     }
 }
+
 seattle.generateRandomNumber();
 seattle.doList();
 
@@ -66,14 +78,14 @@ const tokyo = {
         
         let x = 0;
         for (let i = 0; i < this.workingHour.length; i++) {
-            console.log('------' + i);
+           
             x = getRandomIntInclusive(this.min, this.max);
             this.calculted.push(x);
             this.calculated2.push(Math.floor(x * this.avg));
 
         }
-        console.log(this.calculted);
-        console.log(this.calculated2);
+        // console.log(this.calculted);
+        // console.log(this.calculated2);
     },
  
     doList: function () {
@@ -92,6 +104,15 @@ const tokyo = {
             ulNode.appendChild(node);
     
         }
+        let total=0
+        for(let i=0;i<this.calculated2.length;i++){
+            total=total+this.calculated2[i];
+        }
+
+        let node = document.createElement("LI");                
+        node.textContent = 'Total : '+ total+' cookies' ;                          
+        ulNode.appendChild(node);
+
 
     }
 }
@@ -112,14 +133,13 @@ const dubai = {
         
         let x = 0;
         for (let i = 0; i < this.workingHour.length; i++) {
-            console.log('------' + i);
             x = getRandomIntInclusive(this.min, this.max);
             this.calculted.push(x);
             this.calculated2.push(Math.floor(x * this.avg));
 
         }
-        console.log(this.calculted);
-        console.log(this.calculated2);
+        // console.log(this.calculted);
+        // console.log(this.calculated2);
     },
  
     doList: function () {
@@ -138,6 +158,14 @@ const dubai = {
             ulNode.appendChild(node);
     
         }
+        let total=0
+        for(let i=0;i<this.calculated2.length;i++){
+            total=total+this.calculated2[i];
+        }
+
+        let node = document.createElement("LI");                
+        node.textContent = 'Total : '+ total+' cookies' ;                          
+        ulNode.appendChild(node);
 
     }
 }
@@ -159,14 +187,13 @@ const paris = {
       
         let x = 0;
         for (let i = 0; i < this.workingHour.length; i++) {
-            console.log('------' + i);
             x = getRandomIntInclusive(this.min, this.max);
             this.calculted.push(x);
             this.calculated2.push(Math.floor(x * this.avg));
 
         }
-        console.log(this.calculted);
-        console.log(this.calculated2);
+        // console.log(this.calculted);
+        // console.log(this.calculated2);
     },
  
     doList: function () {
@@ -185,6 +212,14 @@ const paris = {
             ulNode.appendChild(node);
     
         }
+        let total=0
+        for(let i=0;i<this.calculated2.length;i++){
+            total=total+this.calculated2[i];
+        }
+
+        let node = document.createElement("LI");                
+        node.textContent = 'Total : '+ total+' cookies' ;                          
+        ulNode.appendChild(node);
 
     }
 }
@@ -206,14 +241,14 @@ const lima = {
        
         let x = 0;
         for (let i = 0; i < this.workingHour.length; i++) {
-            console.log('------' + i);
+           
             x = getRandomIntInclusive(this.min, this.max);
             this.calculted.push(x);
             this.calculated2.push(Math.floor(x * this.avg));
 
         }
-        console.log(this.calculted);
-        console.log(this.calculated2);
+        // console.log(this.calculted);
+        // console.log(this.calculated2);
     },
  
     doList: function () {
@@ -232,6 +267,14 @@ const lima = {
             ulNode.appendChild(node);
     
         }
+        let total=0
+        for(let i=0;i<this.calculated2.length;i++){
+            total=total+this.calculated2[i];
+        }
+
+        let node = document.createElement("LI");                
+        node.textContent = 'Total : '+ total+' cookies' ;                          
+        ulNode.appendChild(node);
 
     }
 }
