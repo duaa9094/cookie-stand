@@ -93,6 +93,7 @@ lima.generateRandomNumber();
 let container = document.getElementById('mySales');
 let table = document.createElement('table');
 container.appendChild(table);
+table.setAttribute('id', 'myTable');
 let tr = document.createElement('tr');
 table.appendChild(tr);
 let th = document.createElement('th');
@@ -117,7 +118,7 @@ dubai.render();
 paris.render();
 lima.render();
 
-
+/////////////// total 
 let trtotal = document.createElement('tr');
 table.appendChild(trtotal);
 let thtotal1 = document.createElement('th');
@@ -126,6 +127,7 @@ thtotal1.textContent = 'Total';
 
 
 
+let grandTotals = [];
 
 let grandtotal = 0
 
@@ -133,6 +135,8 @@ for (let i = 0; i < seattle.calculated2.length; i++) {
 
 
     grandtotal = seattle.calculated2[i] + tokyo.calculated2[i] + dubai.calculated2[i] + paris.calculated2[i] + lima.calculated2[i];
+
+    grandTotals.push(grandtotal);
 
     let thtotal1 = document.createElement('th');
     trtotal.appendChild(thtotal1);
@@ -152,11 +156,73 @@ thtotal2.textContent = finalTotal;
 
 
 /////////////////////////////////////////////////////////////////Form 
+const form = document.getElementById('locationForm');
+form.addEventListener('submit', handleEvent);
+
+function handleEvent(event) {
+    event.preventDefault();
+    let location = event.target.location.value;
+    let min = event.target.min.value;
+    min = parseInt(min);
+    let max = event.target.max.value;
+    max = parseInt(max);
+    let avg = event.target.avg.value;
+    avg = parseInt(avg);
+
+    deletLastRaw();
+
+
+    let newLocation = new Location(location, min, max, avg);
+    console.log(newLocation);
+    newLocation.generateRandomNumber();
+    newLocation.render();
+
+
+    renderTotalFooter(newLocation);
+
+}
+
+function deletLastRaw() {
+    document.getElementById("myTable").deleteRow(-1);
+}
+
+
+
+function renderTotalFooter(newLocation) {
+    let trtotal = document.createElement('tr');
+    table.appendChild(trtotal);
+    let thtotal1 = document.createElement('th');
+    trtotal.appendChild(thtotal1);
+    thtotal1.textContent = 'Total';
+
+    let grandtotal = 0
+
+    for (let i = 0; i < seattle.calculated2.length; i++) {
+    
+    
+        grandtotal = grandTotals[i] + newLocation.calculated2[i];
+    
+        let thtotal1 = document.createElement('th');
+        trtotal.appendChild(thtotal1);
+    
+        thtotal1.textContent = grandtotal;
+    
+    }
+    
+    
+    finalTotal = finalTotal+newLocation.total;// seattle.total + tokyo.total + dubai.total + paris.total + lima.total;
+    
+    let thtotal2 = document.createElement('th');
+    trtotal.appendChild(thtotal2);
+    
+    thtotal2.textContent = finalTotal;
 
 
 
 
 
+
+}
 
 
 
