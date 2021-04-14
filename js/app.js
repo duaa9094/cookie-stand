@@ -37,7 +37,7 @@ Location.prototype.generateRandomNumber = function () {
 Location.prototype.render = function () {
 
     let tr = document.createElement('tr');
-    tr.setAttribute("class","hover");
+    tr.setAttribute("class", "hover");
     table.appendChild(tr);
     let td = document.createElement('td');
     tr.appendChild(td);
@@ -142,12 +142,35 @@ for (let i = 0; i < seattle.calculated2.length; i++) {
 }
 
 
-let finalTotal=seattle.total+tokyo.total+dubai.total+paris.total+lima.total;
+let finalTotal = seattle.total + tokyo.total + dubai.total + paris.total + lima.total;
 
 let thtotal2 = document.createElement('th');
-    trtotal.appendChild(thtotal2);
+trtotal.appendChild(thtotal2);
 
-    thtotal2.textContent = finalTotal;
+thtotal2.textContent = finalTotal;
+
+
+
+/////////////////////////////////////////////////////////////////Form 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
