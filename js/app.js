@@ -15,7 +15,7 @@ function Location(name, min, max, avg) {
     this.avg = avg;
     this.calculted = [];
     this.calculated2 = [];
-
+    this.total = 0;
 
 }
 
@@ -37,6 +37,7 @@ Location.prototype.generateRandomNumber = function () {
 Location.prototype.render = function () {
 
     let tr = document.createElement('tr');
+    tr.setAttribute("class","hover");
     table.appendChild(tr);
     let td = document.createElement('td');
     tr.appendChild(td);
@@ -52,6 +53,8 @@ Location.prototype.render = function () {
     for (let i = 0; i < this.calculated2.length; i++) {
         total = total + this.calculated2[i];
     }
+    this.total = total;
+    console.log(this.total);
 
     let tdtotal = document.createElement('td');
     tr.appendChild(tdtotal);
@@ -139,6 +142,12 @@ for (let i = 0; i < seattle.calculated2.length; i++) {
 }
 
 
+let finalTotal=seattle.total+tokyo.total+dubai.total+paris.total+lima.total;
+
+let thtotal2 = document.createElement('th');
+    trtotal.appendChild(thtotal2);
+
+    thtotal2.textContent = finalTotal;
 
 
 
