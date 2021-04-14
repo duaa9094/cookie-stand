@@ -147,3 +147,13 @@ img{
     color: brown;
 
 }
+
+#locationForm {
+    margin: 0 auto;
+  
+    width:400px;
+}
+#locationForm label {
+    width: 80px;
+    display: inline-block;
+}
