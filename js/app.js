@@ -89,27 +89,30 @@ paris.generateRandomNumber();
 lima.generateRandomNumber();
 // lima.doList();
 
-
 let container = document.getElementById('mySales');
 let table = document.createElement('table');
-container.appendChild(table);
-table.setAttribute('id', 'myTable');
-let tr = document.createElement('tr');
-table.appendChild(tr);
-let th = document.createElement('th');
-tr.appendChild(th);
-th.textContent = ' ';
 
-for (let i = 0; i < workingHours.length; i++) {
+function renderTableHeader() {
+    container.appendChild(table);
+    table.setAttribute('id', 'myTable');
+    let tr = document.createElement('tr');
+    table.appendChild(tr);
     let th = document.createElement('th');
     tr.appendChild(th);
-    th.textContent = workingHours[i];
+    th.textContent = ' ';
+    
+    for (let i = 0; i < workingHours.length; i++) {
+        let th = document.createElement('th');
+        tr.appendChild(th);
+        th.textContent = workingHours[i];
+    }
+    
+    let thtotal = document.createElement('th');
+    tr.appendChild(thtotal);
+    thtotal.textContent = 'Daily Location Total';
 }
 
-let thtotal = document.createElement('th');
-tr.appendChild(thtotal);
-thtotal.textContent = 'Daily Location Total';
-
+renderTableHeader();
 
 
 seattle.render();
